@@ -423,7 +423,7 @@
       '  <div class="lostice-card">',
       '    <button class="lostice-close" id="lostice-close" aria-label="Skrýt">×</button>',
       '    <div class="lostice-header">',
-      '      <img class="lostice-avatar" src="https://trixtecheu.github.io/lostice-assistant-assets/images/lostice-ai-assistant.jpg" alt="pan Tvarůžek" draggable="false" ondragstart="return false;">',
+      '      <img class="lostice-avatar" src="https://trixtecheu.github.io/lostice-assistant-assets/images/lostice-ai-asistent.jpg" alt="pan Tvarůžek" draggable="false" ondragstart="return false;">',
       '      <strong class="lostice-title"><span class="lostice-title-accent">pan Tvarůžek</span></strong>',
       '    </div>',
       '    <p class="lostice-desc" id="lostice-text">' + defaultMsg + '</p>',
