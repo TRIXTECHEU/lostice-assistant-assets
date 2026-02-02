@@ -1,7 +1,6 @@
 @import url('https://trixtecheu.github.io/city-assistants-kit/styles/chat-widget.css');
 
 :host {
-
   /* 1) Header and avatar */
   /* 1.1) Header bar */
   --header-height: 65px;
@@ -69,6 +68,8 @@
   --btn-cancel-border: #E5E7EB;
   /* hover state */
   --btn-cancel-bg-hover: #F7F7F7;
+  --btn-cancel-text-color-hover: #1A1E23;
+  --btn-cancel-border-hover: #E5E7EB;
 
   --btn-focus-shadow: rgba(0, 123, 204, .25);
 
@@ -283,6 +284,9 @@
   /* hover state */
   --carousel-btn-bg-hover: #FFF;
   --carousel-btn-scale-hover: 1.1;
+  --carousel-btn-color: #434342;
+  --carousel-btn-color-hover: #434342;
+  --carousel-btn-border-hover: 2px solid #E0B54F;
 
   /* 10.10) Carousel icon */
   --carousel-icon-url: url("https://trixtecheu.github.io/lostice-assistant-assets/images/icons/icon-arrow-carousel.svg");
