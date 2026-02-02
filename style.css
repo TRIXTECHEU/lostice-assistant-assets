@@ -10,7 +10,7 @@
 
 /* 1) HEADER SETTINGS + AVATAR */
 /* 1.1) Header color */
-.vfrc-widget [class*="jyiuei2"]{
+.vfrc-header.vfrc-header.vfrc-header {
   box-sizing: border-box;
   height: 65px !important;
   padding: 12px 16px 12px 12px !important;
@@ -21,7 +21,7 @@
 }
 
 /* 1.2) Header avatar */
-div[class*="vfrc-header"] img.vfrc-avatar {
+.vfrc-header img.vfrc-avatar {
   display: block !important;
   height: 150% !important;
   max-height: 150% !important;
@@ -35,7 +35,7 @@ div[class*="vfrc-header"] img.vfrc-avatar {
 
 /* 2) HEADER ICONS */
 /* 2.1) Basic settings for icon buttons */
-.vfrc-header .vfrc-icon._1t7e06e0{
+.vfrc-header [class*="vfrc-header--icon"] {
   position: relative !important;
   display: block !important;
   width: 100% !important;
@@ -45,11 +45,11 @@ div[class*="vfrc-header"] img.vfrc-avatar {
   will-change: transform;
 }
 
-.vfrc-header .vfrc-icon._1t7e06e0 svg{
+.vfrc-header [class*="vfrc-header--icon"] svg {
   display: none !important;
 }
 
-.vfrc-header .vfrc-icon._1t7e06e0::before{
+.vfrc-header [class*="vfrc-header--icon"]::before {
   content: "" !important;
   position: absolute !important;
   top: 50% !important;
@@ -65,7 +65,7 @@ div[class*="vfrc-header"] img.vfrc-avatar {
 }
 
 /* 2.2) Icon button dimensions */
-.vfrc-header button{
+.vfrc-header button {
   width: 40px !important;
   height: 40px !important;
   padding: 0 !important;
@@ -79,7 +79,7 @@ div[class*="vfrc-header"] img.vfrc-avatar {
   -webkit-tap-highlight-color: transparent;
 }
 
-.vfrc-header button:focus-visible{
+.vfrc-header button:focus-visible {
   outline: none !important;
   box-shadow: 0 0 0 2px rgba(0,123,204,.35) !important;
   border-radius: 8px !important;
@@ -92,27 +92,27 @@ div[class*="vfrc-header"] img.vfrc-avatar {
 }
 
 /* 2.3) Refresh icon settings */
-.vfrc-header button:nth-of-type(1) .vfrc-icon._1t7e06e0::before{
+.vfrc-header button:nth-of-type(1) [class*="vfrc-header--icon"]::before {
   width: 38px !important;
   height: 38px !important;
   background-image: url("https://trixtecheu.github.io/lostice-assistant-assets/images/icons/icon-refresh.svg") !important;
 }
 
-.vfrc-header button:nth-of-type(1):hover .vfrc-icon._1t7e06e0::before,
-.vfrc-header button:nth-of-type(1):focus-visible .vfrc-icon._1t7e06e0::before{
+.vfrc-header button:nth-of-type(1):hover [class*="vfrc-header--icon"]::before,
+.vfrc-header button:nth-of-type(1):focus-visible [class*="vfrc-header--icon"]::before {
   transform: translate(-50%, -50%) scale(1.2) rotate(180deg) !important;
   filter: brightness(1.1) !important;
 }
 
 /* 2.4) Close icon settings */
-.vfrc-header button:nth-of-type(2) .vfrc-icon._1t7e06e0::before{
+.vfrc-header button:nth-of-type(2) [class*="vfrc-header--icon"]::before {
   width: 28px !important;
   height: 28px !important;
   background-image: url("https://trixtecheu.github.io/lostice-assistant-assets/images/icons/icon-close.svg") !important;
 }
 
-.vfrc-header button:nth-of-type(2):hover .vfrc-icon._1t7e06e0::before,
-.vfrc-header button:nth-of-type(2):focus-visible .vfrc-icon._1t7e06e0::before{
+.vfrc-header button:nth-of-type(2):hover [class*="vfrc-header--icon"]::before,
+.vfrc-header button:nth-of-type(2):focus-visible [class*="vfrc-header--icon"]::before {
   transform: translate(-50%, -50%) scale(1.2) !important;
   filter: brightness(1.1) !important;
 }
