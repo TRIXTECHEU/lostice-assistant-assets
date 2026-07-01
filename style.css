@@ -376,7 +376,7 @@
   --launcher-container-z-index: 100;
 
   /* 15.2) Open chat button */
-  --btn-size: 75px;
+  --btn-size: 80px;
   --bg-color: #E0B54F;
   --icon-size: calc(40px * 1.3);
   --launcher-open-shadow: 0 4px 10px rgba(0,0,0,0.2);
