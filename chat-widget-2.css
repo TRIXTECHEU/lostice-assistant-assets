@@ -931,6 +931,7 @@ a[class*="footer_links-extra-text"]:focus-visible {
 
 
 /* 15) LAUNCHER */
+/* Animations */
 @keyframes vf-nudge {
   0%, 70%, 100% { transform: scale(1) rotate(0); }
   74%           { transform: scale(0.92) rotate(0); }
@@ -940,24 +941,18 @@ a[class*="footer_links-extra-text"]:focus-visible {
   90%           { transform: scale(1) rotate(-4deg); }
   94%           { transform: scale(1) rotate(0); }
 }
- 
+
 @keyframes vf-dot-ping {
   0%        { transform: scale(1);   opacity: 0.7; }
   80%, 100% { transform: scale(2.2); opacity: 0; }
 }
 
-button.vfrc-launcher[title*="Otevřít"]._1nzwwii0,
-button.vfrc-launcher[title*="Otevřít"]._1nzwwii2,
-button.vfrc-launcher[title*="Otevřít"]._1nzwwii5 {
-  overflow: visible !important;
-}
- 
 /* 15.1) Reset box sizing */
 .vfrc-launcher,
 .vfrc-launcher * {
   box-sizing: border-box !important;
 }
- 
+
 /* 15.2) Launcher container */
 .vfrc-launcher__container {
   position: fixed !important;
@@ -969,7 +964,7 @@ button.vfrc-launcher[title*="Otevřít"]._1nzwwii5 {
   align-items: flex-end !important;
   overflow: visible !important;
 }
- 
+
 /* 15.3) Launcher button - open chat */
 button.vfrc-launcher[title*="Otevřít"],
 button.vfrc-launcher[aria-label*="Otevřít"],
@@ -983,7 +978,6 @@ button.vfrc-launcher[aria-label*="Open"] {
   max-height: var(--btn-size) !important;
   background-color: var(--bg-color) !important;
   border-radius: 50% !important;
-  overflow: visible !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -992,13 +986,15 @@ button.vfrc-launcher[aria-label*="Open"] {
   position: fixed !important;
   bottom: var(--pos-bottom) !important;
   right: var(--pos-right) !important;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18) !important;
-  transform-origin: center !important;
-  animation: vf-nudge 6s ease-in-out infinite !important;
-  transition: transform 0.18s ease, box-shadow 0.25s ease !important;
+  box-shadow: var(--launcher-shadow, 0 8px 22px rgba(0, 0, 0, 0.18)) !important;
+  overflow: visible !important;
+  animation: none !important;
+  transform: none !important;
+  scale: 1 !important;
+  transition: box-shadow 0.25s ease !important;
 }
- 
-/* 15.3.1) Online dot — ::before = tečka, ::after = ping kroužek */
+
+/* 15.3.1) Online dot */
 button.vfrc-launcher[title*="Otevřít"]::before,
 button.vfrc-launcher[aria-label*="Otevřít"]::before,
 button.vfrc-launcher[title*="Open"]::before,
@@ -1007,17 +1003,17 @@ button.vfrc-launcher[aria-label*="Open"]::before {
   position: absolute !important;
   width: 14px !important;
   height: 14px !important;
-  background-color: #22c55e !important;
-  border-radius: 50% !important;
-  border: 2.5px solid #fff !important;
   top: 2px !important;
   right: 2px !important;
   left: auto !important;
   bottom: auto !important;
+  background-color: var(--dot-color, #22c55e) !important;
+  border: 2.5px solid #fff !important;
+  border-radius: 50% !important;
   z-index: 9999 !important;
   pointer-events: none !important;
 }
- 
+
 button.vfrc-launcher[title*="Otevřít"]::after,
 button.vfrc-launcher[aria-label*="Otevřít"]::after,
 button.vfrc-launcher[title*="Open"]::after,
@@ -1028,16 +1024,32 @@ button.vfrc-launcher[aria-label*="Open"]::after {
   right: 2px !important;
   width: 14px !important;
   height: 14px !important;
+  border: 2px solid var(--dot-color, #22c55e) !important;
   border-radius: 50% !important;
-  border: 2px solid #22c55e !important;
   background: transparent !important;
-  pointer-events: none !important;
   z-index: 9998 !important;
+  pointer-events: none !important;
   transform-origin: center !important;
   animation: vf-dot-ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite !important;
 }
- 
-/* 15.3.2) Launcher button - close chat */
+
+/* 15.3.2) Hide online dot when chat is open */
+button.vfrc-launcher._1u16jol2::before,
+button.vfrc-launcher._1u16jol2::after,
+button.vfrc-launcher[title*="Zavřít"]::before,
+button.vfrc-launcher[title*="Zavřít"]::after,
+button.vfrc-launcher[aria-label*="Zavřít"]::before,
+button.vfrc-launcher[aria-label*="Zavřít"]::after,
+button.vfrc-launcher[title*="Close"]::before,
+button.vfrc-launcher[title*="Close"]::after,
+button.vfrc-launcher[aria-label*="Close"]::before,
+button.vfrc-launcher[aria-label*="Close"]::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+}
+
+/* 15.3.3) Launcher button - close chat */
 button.vfrc-launcher[title*="Zavřít"],
 button.vfrc-launcher[aria-label*="Zavřít"],
 button.vfrc-launcher[title*="Close"],
@@ -1051,7 +1063,6 @@ button.vfrc-launcher._1u16jol2 {
   max-height: var(--close-btn-size) !important;
   background-color: var(--close-bg-color) !important;
   border-radius: 50% !important;
-  overflow: hidden !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1060,11 +1071,14 @@ button.vfrc-launcher._1u16jol2 {
   position: fixed !important;
   bottom: var(--pos-bottom) !important;
   right: var(--pos-right) !important;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18) !important;
+  box-shadow: var(--launcher-shadow, 0 8px 22px rgba(0, 0, 0, 0.18)) !important;
+  overflow: hidden !important;
   animation: none !important;
-  transition: transform 0.18s ease, box-shadow 0.25s ease !important;
+  transform: none !important;
+  scale: 1 !important;
+  transition: box-shadow 0.25s ease !important;
 }
- 
+
 /* 15.4) Launcher inner wrapper */
 .vfrc-launcher .vfrc-launcher__inner {
   width: 100% !important;
@@ -1075,7 +1089,7 @@ button.vfrc-launcher._1u16jol2 {
   padding: 0 !important;
   margin: 0 !important;
 }
- 
+
 /* 15.5) Launcher image - open chat */
 button.vfrc-launcher[title*="Otevřít"] img,
 button.vfrc-launcher[aria-label*="Otevřít"] img,
@@ -1093,9 +1107,11 @@ button.vfrc-launcher[aria-label*="Open"] img,
   flex-grow: 0 !important;
   display: block !important;
   border-radius: 0 !important;
-  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transform: none !important;
+  scale: 1 !important;
+  transition: none !important;
 }
- 
+
 /* 15.5.1) Launcher image - close chat */
 button.vfrc-launcher[title*="Zavřít"] img,
 button.vfrc-launcher[aria-label*="Zavřít"] img,
@@ -1112,67 +1128,56 @@ button.vfrc-launcher._1u16jol2 img {
   flex-grow: 0 !important;
   display: block !important;
   border-radius: 0 !important;
-  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  transform: none !important;
+  scale: 1 !important;
+  transition: none !important;
 }
- 
+
 /* 15.6) Hide default SVG */
 .vfrc-launcher svg {
   display: none !important;
 }
- 
-/* 15.7) Hover - open chat */
-button.vfrc-launcher[title*="Otevřít"]:hover,
-button.vfrc-launcher[aria-label*="Otevřít"]:hover,
-button.vfrc-launcher[title*="Open"]:hover,
-button.vfrc-launcher[aria-label*="Open"]:hover {
+
+/* 15.7) Hover - no scale */
+.vfrc-launcher:hover,
+button.vfrc-launcher:hover,
+button.vfrc-launcher:hover .vfrc-launcher__inner,
+button.vfrc-launcher:hover img {
   transform: none !important;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18) !important;
+  scale: 1 !important;
 }
- 
-button.vfrc-launcher[title*="Otevřít"]:hover img,
-button.vfrc-launcher[aria-label*="Otevřít"]:hover img,
-button.vfrc-launcher[title*="Open"]:hover img,
-button.vfrc-launcher[aria-label*="Open"]:hover img {
-  transform: scale(var(--launcher-open-hover-scale, 1)) !important;
+
+button.vfrc-launcher:hover {
+  box-shadow: var(--launcher-shadow-hover, 0 10px 26px rgba(0, 0, 0, 0.22)) !important;
 }
- 
-/* 15.7.1) Hover - close chat */
-button.vfrc-launcher[title*="Zavřít"]:hover,
-button.vfrc-launcher[aria-label*="Zavřít"]:hover,
-button.vfrc-launcher[title*="Close"]:hover,
-button.vfrc-launcher[aria-label*="Close"]:hover,
-button.vfrc-launcher._1u16jol2:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22) !important;
-}
- 
-button.vfrc-launcher[title*="Zavřít"]:hover img,
-button.vfrc-launcher[aria-label*="Zavřít"]:hover img,
-button.vfrc-launcher[title*="Close"]:hover img,
-button.vfrc-launcher[aria-label*="Close"]:hover img,
-button.vfrc-launcher._1u16jol2:hover img {
-  transform: scale(var(--launcher-close-hover-scale, 1)) !important;
-}
- 
+
 /* 15.8) Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .vfrc-launcher,
   .vfrc-launcher img,
+  .vfrc-launcher::before,
   .vfrc-launcher::after {
     animation: none !important;
     transition: none !important;
   }
 }
- 
+
 /* 15.9) Hide subtitles */
 .vfrc-tooltip,
 div[class*="t1cwqp"] {
   display: none !important;
 }
- 
+
 /* 15.10) Chat spacing */
 .vfrc-widget--chat {
   margin-bottom: 80px !important;
+}
+
+/* 15.11) Lock launcher size - no grow/pop on open/close */
+.vfrc-launcher,
+.vfrc-launcher__inner,
+.vfrc-launcher img {
+  transition: box-shadow 0.25s ease !important;
 }
 
 
