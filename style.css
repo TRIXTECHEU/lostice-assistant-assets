@@ -378,10 +378,10 @@
   /* 15.2) Open chat button */
   --btn-size: 75px;
   --bg-color: #E0B54F;
-  --icon-size: 65px;
+  --icon-size: calc(40px * 1.3);
   --launcher-open-shadow: 0 4px 10px rgba(0,0,0,0.2);
   --launcher-open-transition: transform 0.2s ease-in-out;
-  --launcher-open-hover-scale: 1.1;
+  --launcher-open-hover-scale: 1;
 
   /* 15.3) Close chat button */
   --close-btn-size: 0px;
@@ -389,7 +389,7 @@
   --close-icon-size: 0px;
   --launcher-close-shadow: 0 4px 10px rgba(0,0,0,0.2);
   --launcher-close-transition: transform 0.2s ease-in-out;
-  --launcher-close-hover-scale: 1.1;
+  --launcher-close-hover-scale: 1;
 
   /* 15.4) Launcher icon transition */
   --launcher-icon-transition: transform 180ms ease;
