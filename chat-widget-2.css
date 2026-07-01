@@ -931,6 +931,7 @@ a[class*="footer_links-extra-text"]:focus-visible {
 
 
 /* 15) LAUNCHER */
+
 /* Animations */
 @keyframes vf-nudge {
   0%, 70%, 100% { transform: scale(1) rotate(0); }
@@ -988,9 +989,9 @@ button.vfrc-launcher[aria-label*="Open"] {
   right: var(--pos-right) !important;
   box-shadow: var(--launcher-shadow, 0 8px 22px rgba(0, 0, 0, 0.18)) !important;
   overflow: visible !important;
-  animation: none !important;
-  transform: none !important;
   scale: 1 !important;
+  transform-origin: center !important;
+  animation: vf-nudge 6s ease-in-out infinite !important;
   transition: box-shadow 0.25s ease !important;
 }
 
@@ -1138,17 +1139,16 @@ button.vfrc-launcher._1u16jol2 img {
   display: none !important;
 }
 
-/* 15.7) Hover - no scale */
-.vfrc-launcher:hover,
-button.vfrc-launcher:hover,
+/* 15.7) Hover - keep nudge, no extra icon scale */
+button.vfrc-launcher:hover {
+  scale: 1 !important;
+  box-shadow: var(--launcher-shadow-hover, 0 10px 26px rgba(0, 0, 0, 0.22)) !important;
+}
+
 button.vfrc-launcher:hover .vfrc-launcher__inner,
 button.vfrc-launcher:hover img {
   transform: none !important;
   scale: 1 !important;
-}
-
-button.vfrc-launcher:hover {
-  box-shadow: var(--launcher-shadow-hover, 0 10px 26px rgba(0, 0, 0, 0.22)) !important;
 }
 
 /* 15.8) Reduced motion */
@@ -1173,11 +1173,10 @@ div[class*="t1cwqp"] {
   margin-bottom: 80px !important;
 }
 
-/* 15.11) Lock launcher size - no grow/pop on open/close */
-.vfrc-launcher,
+/* 15.11) Lock icon size - no grow on open/close */
 .vfrc-launcher__inner,
 .vfrc-launcher img {
-  transition: box-shadow 0.25s ease !important;
+  transition: none !important;
 }
 
 
