@@ -369,31 +369,30 @@
   --footer-logo-width: 160px;
   --footer-logo-height: 40px;
 
-  /* 15) Launcher (floating open/close chat button) */
-  /* 15.1) Position */
+  
+  /* 15) Launcher */
+  
+  /* Launcher Positioning */
   --pos-bottom: 20px;
   --pos-right: 20px;
   --launcher-container-z-index: 100;
-
-  /* 15.2) Open chat button */
+  
+  /* Open Button */
   --btn-size: 80px;
   --bg-color: #E0B54F;
   --icon-size: calc(40px * 1.3);
-  --launcher-open-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  --launcher-open-transition: transform 0.2s ease-in-out;
-  --launcher-open-hover-scale: 1;
-
-  /* 15.3) Close chat button */
+  
+  /* Close Button */
   --close-btn-size: 0px;
   --close-bg-color: #E0B54F;
   --close-icon-size: 0px;
-  --launcher-close-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  --launcher-close-transition: transform 0.2s ease-in-out;
-  --launcher-close-hover-scale: 1;
+  
+  /* Online dot + shadows */
+  --dot-color: #22c55e;
+  --launcher-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  --launcher-shadow-hover: 0 10px 26px rgba(0, 0, 0, 0.22);
 
-  /* 15.4) Launcher icon transition */
-  --launcher-icon-transition: transform 180ms ease;
-
+  
   /* 16) Privacy / GDPR popup */
   /* 16.1) Title */
   --privacy-title-size: 18px;
