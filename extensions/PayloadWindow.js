@@ -11,8 +11,8 @@
     message:     'Dobrý den, jak vám můžeme pomoci?',
     showTitle:   true,
     anim:        'typewriter',
-    delay:       2000,
-    autoHide:    20000,
+    delay:       3000,
+    autoHide:    30000,
     once:        true,
     openOnHover: false,
     launcherTimeout: 6000,
@@ -82,6 +82,7 @@
       opacity: 0;
       transform: translateY(6px) scale(0.94);
       transition: opacity 0.45s ease, transform 0.45s ease;
+      pointer-events: none;
     }
 
     .gb-bubble::after {
@@ -332,6 +333,9 @@
     if (!bubble) return;
     bubble.classList.add('gb-hide');
     bubble.classList.remove('gb-show');
+    if (wrap) {
+      setTimeout(function () { if (wrap) wrap.style.display = 'none'; }, 500);
+    }
   }
 
   window.GreetingBubble = {
