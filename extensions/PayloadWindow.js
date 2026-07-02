@@ -12,7 +12,7 @@
     showTitle:   true,
     anim:        'typewriter',
     delay:       3000,
-    autoHide:    30000,
+    autoHide:    40000,
     once:        true,
     openOnHover: false,
     launcherTimeout: 6000,
@@ -22,7 +22,7 @@
     radius:       '15px',
     width:        '230px',
     font:         'system-ui, -apple-system, sans-serif',
-    bottomOffset: '118px',
+    bottomOffset: '115px',
     rightOffset:  '20px',
   };
 
@@ -44,8 +44,8 @@
   var CSS = `
     .gb-wrap {
       position: fixed;
-      bottom: var(--gb-bottom, 118px);
-      right: var(--gb-right, 20px);
+      bottom: var(--gb-bottom);
+      right: var(--gb-right);
       z-index: 101;
       display: flex;
       flex-direction: column;
@@ -56,10 +56,10 @@
     .gb-bubble {
       pointer-events: auto;
       position: relative;
-      width: min(var(--gb-width, 230px), calc(100vw - 100px));
-      background: var(--gb-bg, #fff);
-      color: var(--gb-text, #374151);
-      border-radius: var(--gb-radius, 15px);
+      width: min(var(--gb-width), calc(100vw - 100px));
+      background: var(--gb-bg);
+      color: var(--gb-text);
+      border-radius: var(--gb-radius);
       border: none;
       padding: 12px 30px 12px 14px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06);
@@ -67,7 +67,7 @@
       transform: translateY(6px) scale(0.97);
       transition: opacity 0.3s ease, transform 0.3s ease;
       box-sizing: border-box;
-      font-family: var(--gb-font, system-ui, -apple-system, sans-serif);
+      font-family: var(--gb-font);
       font-size: 13px;
       line-height: 1.4;
       cursor: pointer;
@@ -93,7 +93,7 @@
       bottom: -6px;
       width: 12px;
       height: 12px;
-      background: var(--gb-bg, #fff);
+      background: var(--gb-bg);
       transform: rotate(45deg);
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.04);
       border-radius: 0 0 3px 0;
@@ -104,7 +104,7 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--gb-color, #3e68a7);
+      color: var(--gb-color);
       margin-bottom: 4px;
       font-family: inherit;
     }
@@ -112,7 +112,7 @@
     .gb-text {
       font-size: 13px;
       line-height: 1.4;
-      color: var(--gb-text, #374151);
+      color: var(--gb-text);
       min-height: 1.4em;
     }
 
