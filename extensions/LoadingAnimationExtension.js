@@ -1,47 +1,5 @@
 /* TrixTech s.r.o. @2026 */
 
-/*
- * LoadingAnimationExtension
- * ─────────────────────────────────────────────────────────────────────────────
- * Voiceflow response extension — two-phase animated loading state.
- *
- * GLOBAL CONFIG  (set before this script loads)
- *   window.LoadingAnimationConfig = { ... }
- *
- * PER-MESSAGE CONFIG  (trace.payload — overrides global)
- *   { name: 'ext_loadingAnimation', lang: 'cs', placeType: 'town', duration: 6 }
- *
- * ── Timing ───────────────────────────────────────────────────────────────────
- *   duration             {number}  Fixed total seconds (payload only).
- *   durationMs           {number}  Fixed total ms (global config only).
- *   minDurationMs        {number}  Min random duration. Default 4000.
- *   maxDurationMs        {number}  Max random duration. Default 9000.
- *   phaseSplit           {number}  0–1, share of total time for search phase. Default 0.42.
- *   typingMsPerChar      {number}  Base ms per typed character. Default 24.
- *   typingJitterMs       {number}  Random ms added per character. Default 16.
- *   deleteMsPerChar      {number}  Ms per deleted character. Default 9.
- *   pauseAfterTypedMs    {number}  Pause after full phrase typed. Default 900.
- *   pauseBetweenPhasesMs {number}  Pause between phase 1 → 2. Default 280.
- *   endingMinMs          {number}  Minimum ms before ending triggers. Default 700.
- *
- * ── Behaviour ────────────────────────────────────────────────────────────────
- *   lang             {string}   'cs' | 'sk' | 'en' | 'de' | 'pl' | 'uk' | 'hu'
- *   placeType        {string}   'city' | 'town' | 'other'
- *   variant          {string}   'default' | 'compact' | 'minimal'
- *   showIcon         {boolean}  Show animated icon. Default true.
- *   showSuccessState {boolean}  Show checkmark at the end. Default true.
- *   useRandomPhrases {boolean}  Randomise phrase selection. Default true.
- *   customPhrases    {object}   Override per language: { cs: { search: [], thinking: [] } }
- *   a11yLabel        {string}   Custom ARIA label for screen readers.
- *
- * ── Theme ─────────────────────────────────────────────────────────────────────
- *   bg, border, shadow, borderRadius, fontSize, fontFamily
- *   text, textThinking, textSuccess
- *   accent, accentAlt, borderThinking, borderSuccess, bgSuccess
- *   Nest under a `theme` key in global config, or pass flat in payload.
- * ─────────────────────────────────────────────────────────────────────────────
- */
-
 ;(function () {
   'use strict';
 
